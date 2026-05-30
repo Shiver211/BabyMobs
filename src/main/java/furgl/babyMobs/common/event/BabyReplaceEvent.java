@@ -1,6 +1,5 @@
 package furgl.babyMobs.common.event;
 
-import java.util.Iterator;
 import java.util.Random;
 import java.util.UUID;
 
@@ -327,6 +326,7 @@ public class BabyReplaceEvent
 			entityToSpawn = (Entity) entityToSpawnClass.getConstructor(World.class).newInstance(world);
 			NBTTagCompound nbt = new NBTTagCompound();
 			originalEntity.writeToNBT(nbt);
+			nbt.removeTag("Passengers");
 			entityToSpawn.readFromNBT(nbt);
 			entityToSpawn.setCustomNameTag(originalEntity.getCustomNameTag());
 			entityToSpawn.setUniqueId(UUID.randomUUID());
@@ -340,14 +340,15 @@ public class BabyReplaceEvent
 
 		//Copy data from riders/ridden
 		// TODO change to just re-set riders, rather than kill and respawn
-		if (originalEntity.isBeingRidden() && !originalEntity.getRecursivePassengers().isEmpty())
+		if (originalEntity.isBeingRidden() && !originalEntity.getPassengers().isEmpty())
 		{
-			Iterator it = originalEntity.getRecursivePassengers().iterator();
-			Entity entity = (Entity) it.next();
-			if (entity != riderToIgnore) {
-				Entity riddenByEntity = this.spawnEntity(entity.getClass(), entity, originalEntity); // XXX
+			for (Entity passenger : originalEntity.getPassengers())
+			{
+				if (passenger == riderToIgnore)
+					continue;
+				Entity riddenByEntity = this.spawnEntity(passenger.getClass(), passenger, originalEntity); // XXX
 				riddenByEntity.startRiding(entityToSpawn);
-				entity.setDead();
+				passenger.setDead();
 			}
 		}
 		if (originalEntity.getRidingEntity() != null && originalEntity.getRidingEntity() != riderToIgnore)
