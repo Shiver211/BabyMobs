@@ -173,7 +173,7 @@ public class EntityBabyWither extends EntityWither
 							double d2 = arrow.shootingEntity.posZ - newArrow.posZ;
 							double d3 = MathHelper.sqrt(d0 * d0 + d2 * d2);
 							float f4 = (float)(d3 * 0.20000000298023224D);
-							newArrow.setThrowableHeading(d0, d1 + f4, d2, 1.6F, 14 - this.world.getDifficulty().getDifficultyId() * 4);
+							newArrow.shoot(d0, d1 + f4, d2, 1.6F, 14 - this.world.getDifficulty().getId() * 4);
 							if (!this.world.isRemote)
 							{
 								this.world.spawnEntity(newArrow);

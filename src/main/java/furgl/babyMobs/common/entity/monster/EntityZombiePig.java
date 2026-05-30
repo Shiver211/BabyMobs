@@ -79,7 +79,7 @@ public class EntityZombiePig extends EntityPig
 		this.conversionTime = ticks;
 		this.getDataManager().set(CONVERTING, Boolean.valueOf(true));
 		this.removePotionEffect(MobEffects.WEAKNESS);
-		this.addPotionEffect(new PotionEffect(MobEffects.STRENGTH, ticks, Math.min(this.world.getDifficulty().getDifficultyId() - 1, 0)));
+		this.addPotionEffect(new PotionEffect(MobEffects.STRENGTH, ticks, Math.min(this.world.getDifficulty().getId() - 1, 0)));
 		this.world.setEntityState(this, (byte)16);
 	}
 

@@ -118,7 +118,7 @@ public class EntityBabyGhast extends EntityGhast
 			EntityLivingBase entitylivingbase = this.parentEntity.getAttackTarget();
 			double d0 = 64.0D;
 
-			if (entitylivingbase.getDistanceSqToEntity(this.parentEntity) < d0 * d0 && this.parentEntity.canEntityBeSeen(entitylivingbase))
+			if (entitylivingbase.getDistanceSq(this.parentEntity) < d0 * d0 && this.parentEntity.canEntityBeSeen(entitylivingbase))
 			{
 				World world = this.parentEntity.world;
 				++this.attackTimer;
@@ -199,7 +199,7 @@ public class EntityBabyGhast extends EntityGhast
             else
             {
                 EntityLivingBase entitylivingbase = this.parentEntity.getAttackTarget();
-                if (entitylivingbase.getDistanceSqToEntity(this.parentEntity) < 4096.0D)
+                if (entitylivingbase.getDistanceSq(this.parentEntity) < 4096.0D)
                 {
                     double d1 = entitylivingbase.posX - this.parentEntity.posX;
                     double d2 = entitylivingbase.posZ - this.parentEntity.posZ;

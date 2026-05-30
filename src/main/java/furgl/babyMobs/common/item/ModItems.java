@@ -37,7 +37,7 @@ public class ModItems
 		private static void register(IForgeRegistry<Item> registry, Item item, String itemName, boolean addToTab) {
 			allItems.add(item);
 			item.setRegistryName(BabyMobs.MODID, itemName);
-			item.setUnlocalizedName(item.getRegistryName().getResourcePath());
+			item.setTranslationKey(item.getRegistryName().getPath());
 			if (addToTab)
 				item.setCreativeTab(BabyMobs.tab);
 			registry.register(item);
@@ -48,6 +48,6 @@ public class ModItems
 	public static void registerRenders() {
 		for (Item item : allItems)
 			Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register
-			(item, 0, new ModelResourceLocation(BabyMobs.MODID+":" + item.getUnlocalizedName().substring(5), "inventory"));
+			(item, 0, new ModelResourceLocation(BabyMobs.MODID+":" + item.getTranslationKey().substring(5), "inventory"));
 	}
 }

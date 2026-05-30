@@ -131,7 +131,7 @@ public class EntityBabyDragon extends EntityDragon
 			if (this.ticksExisted == 3)
 				this.targetY = this.dragonEgg.y + 2D;
 			else if (this.ticksExisted % 40 == 0)
-				this.target = new BlockPos(this.dragonEgg.addVector(rand.nextInt(5)-2, rand.nextDouble()*3, rand.nextInt(5)-2));
+				this.target = new BlockPos(this.dragonEgg.add(rand.nextInt(5)-2, rand.nextDouble()*3, rand.nextInt(5)-2));
 
 			if (this.world.isRemote)
 			{
@@ -251,7 +251,7 @@ public class EntityBabyDragon extends EntityDragon
 					this.targetZ += this.rand.nextGaussian() * 2.0D;
 				}
 
-				if (this.forceNewTarget || d2 < 100.0D || d2 > 22500.0D || this.isCollidedHorizontally || this.isCollidedVertically)
+				if (this.forceNewTarget || d2 < 100.0D || d2 > 22500.0D || this.collidedHorizontally || this.collidedVertically)
 				{
 					//this.setNewTarget();
 				}

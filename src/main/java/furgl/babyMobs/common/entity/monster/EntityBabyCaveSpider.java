@@ -80,7 +80,7 @@ public class EntityBabyCaveSpider extends EntityCaveSpider
 				if (this.getAttackTarget() != null && this instanceof EntityBabyCaveSpider && !this.spitting && this.getHealth() > 0)
 				{
 					EntityLivingBase entitylivingbase = this.getAttackTarget();
-					double d0 = this.getDistanceSqToEntity(entitylivingbase);
+					double d0 = this.getDistanceSq(entitylivingbase);
 
 					if (d0 > 10.0D)
 						this.dataManager.set(SPITTING, (byte)1);
@@ -108,7 +108,7 @@ public class EntityBabyCaveSpider extends EntityCaveSpider
 					double x = entitylivingbase.posX - this.posX;
 					double y = entitylivingbase.posY - this.posY;
 					double z = entitylivingbase.posZ - this.posZ;
-					venom.setThrowableHeading(x, y+2, z, 1.6F, 5.0F);
+					venom.shoot(x, y+2, z, 1.6F, 5.0F);
 					//not working this.world.playSound(this.posX + 0.5D, this.posY + 0.5D, this.posZ + 0.5D, SoundEvents.entity_generic_drink, this.getSoundCategory(), 1.0F, this.rand.nextFloat() * 0.1F + 1.7F, false);					
 					this.world.spawnEntity(venom);
 				}

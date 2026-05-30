@@ -157,7 +157,7 @@ public class EntityBabyShulker extends EntityShulker
                 --this.field_188520_b;
                 EntityLivingBase entitylivingbase = EntityBabyShulker.this.getAttackTarget();
                 EntityBabyShulker.this.getLookHelper().setLookPositionWithEntity(entitylivingbase, 180.0F, 180.0F);
-                double d0 = EntityBabyShulker.this.getDistanceSqToEntity(entitylivingbase);
+                double d0 = EntityBabyShulker.this.getDistanceSq(entitylivingbase);
 
                 if (d0 < 400.0D)
                 {

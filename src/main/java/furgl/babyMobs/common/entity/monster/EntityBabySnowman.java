@@ -99,7 +99,7 @@ public class EntityBabySnowman extends EntitySnowman
 			double d2 = d0 - entitysnowmansnowball.posY;
 			double d3 = p_82196_1_.posZ - this.posZ;
 			float f1 = MathHelper.sqrt(d1 * d1 + d3 * d3) * 0.2F;
-			entitysnowmansnowball.setThrowableHeading(d1, d2 + f1, d3, 1.6F, 12.0F);
+			entitysnowmansnowball.shoot(d1, d2 + f1, d3, 1.6F, 12.0F);
 			this.playSound(SoundEvents.ENTITY_SNOWMAN_SHOOT, 1.0F, 1.0F / (this.getRNG().nextFloat() * 0.4F + 0.8F));
 			this.world.spawnEntity(entitysnowmansnowball);
 		}
@@ -111,7 +111,7 @@ public class EntityBabySnowman extends EntitySnowman
 			double d2 = d0 - entitysnowball.posY;
 			double d3 = p_82196_1_.posZ - this.posZ;
 			float f1 = MathHelper.sqrt(d1 * d1 + d3 * d3) * 0.2F;
-			entitysnowball.setThrowableHeading(d1, d2 + f1, d3, 1.6F, 12.0F);
+			entitysnowball.shoot(d1, d2 + f1, d3, 1.6F, 12.0F);
 			this.playSound(SoundEvents.ENTITY_SNOWMAN_SHOOT, 1.0F, 1.0F / (this.getRNG().nextFloat() * 0.4F + 0.8F));
 			this.world.spawnEntity(entitysnowball);
 		}

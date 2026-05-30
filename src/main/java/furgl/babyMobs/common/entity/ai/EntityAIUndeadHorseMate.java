@@ -66,7 +66,7 @@ public class EntityAIUndeadHorseMate extends EntityAIMate
 		this.theAnimal.getNavigator().tryMoveToEntityLiving(this.targetMate, this.moveSpeed);
 		++this.spawnBabyDelay;
 
-		if (this.spawnBabyDelay >= 60 && this.theAnimal.getDistanceSqToEntity(this.targetMate) < 9.0D)
+		if (this.spawnBabyDelay >= 60 && this.theAnimal.getDistanceSq(this.targetMate) < 9.0D)
 		{
 			this.spawnBaby();
 		}
@@ -80,10 +80,10 @@ public class EntityAIUndeadHorseMate extends EntityAIMate
 
 		for (EntityAnimal entityanimal1 : list)
 		{
-			if (this.theAnimal.canMateWith(entityanimal1) && this.theAnimal.getDistanceSqToEntity(entityanimal1) < d0)
+			if (this.theAnimal.canMateWith(entityanimal1) && this.theAnimal.getDistanceSq(entityanimal1) < d0)
 			{
 				entityanimal = entityanimal1;
-				d0 = this.theAnimal.getDistanceSqToEntity(entityanimal1);
+				d0 = this.theAnimal.getDistanceSq(entityanimal1);
 			}
 		}
 

@@ -83,7 +83,7 @@ public class EntityBabyZombie extends EntityZombie
 			{
 				this.setLastAttackedEntity(this.getAttackTarget());
 				this.getMoveHelper().setMoveTo(this.getAttackTarget().posX, this.getAttackTarget().posY, this.getAttackTarget().posZ, 1.0D);
-				if (this.getDistanceToEntity(this.getAttackTarget()) < 1.0F)
+				if (this.getDistance(this.getAttackTarget()) < 1.0F)
 					this.attackEntityAsMob(this.getAttackTarget());
 			}
 		}

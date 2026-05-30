@@ -33,7 +33,7 @@ public class AttackEvent
 			if (Config.useSpecialAbilities && event.getEntityLiving() instanceof EntityPlayer)
 			{
 				BlockPos pos = new BlockPos(event.getEntityLiving().posX, event.getEntityLiving().posY, event.getEntityLiving().posZ);
-				if (event.getEntityLiving().world.rand.nextInt(5) == 0 && event.getEntityLiving().world.isAirBlock(pos) && event.getEntityLiving().getDistanceSqToEntity(event.getSource().getTrueSource()) < 80D)
+				if (event.getEntityLiving().world.rand.nextInt(5) == 0 && event.getEntityLiving().world.isAirBlock(pos) && event.getEntityLiving().getDistanceSq(event.getSource().getTrueSource()) < 80D)
 					event.getEntityLiving().world.setBlockState(pos, ModBlocks.DISAPPEARING_WEB.getDefaultState());
 			}
 		}//convert Zombie

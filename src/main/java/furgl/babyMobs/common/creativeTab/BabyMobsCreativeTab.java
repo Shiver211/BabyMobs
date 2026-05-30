@@ -19,7 +19,7 @@ public class BabyMobsCreativeTab extends CreativeTabs
 	}
 
 	@Override
-	public ItemStack getTabIconItem() {
+	public ItemStack createIcon() {
 		return new ItemStack(Items.SPAWN_EGG);
 	}
 	

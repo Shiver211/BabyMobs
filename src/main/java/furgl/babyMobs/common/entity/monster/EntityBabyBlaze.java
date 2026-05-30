@@ -90,7 +90,7 @@ public class EntityBabyBlaze extends EntityBlaze
 				if (this.getAttackTarget() instanceof EntityPlayer && this.canEntityBeSeen(this.getAttackTarget()) && !(this.getAttackTarget() instanceof FakePlayer) && !(((EntityPlayer)this.getAttackTarget()).capabilities.isCreativeMode))
 				{
 					EntityLivingBase entitylivingbase = this.getAttackTarget();
-					double d0 = this.getDistanceSqToEntity(entitylivingbase);
+					double d0 = this.getDistanceSq(entitylivingbase);
 
 					if (d0 < 40.0D)
 						this.dataManager.set(FLAMETHROWER, (byte)1);

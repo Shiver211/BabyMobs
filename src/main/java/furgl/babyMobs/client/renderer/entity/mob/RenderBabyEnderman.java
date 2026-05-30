@@ -61,8 +61,8 @@ public class RenderBabyEnderman extends RenderEnderman
             Vec3d vec3 = this.func_177110_a(entitylivingbase, entitylivingbase.height * 0.5D, partialTicks);
             Vec3d vec31 = this.func_177110_a(entity, f6, partialTicks);
             Vec3d vec32 = vec3.subtract(vec31);
-            //double d3 = vec32.lengthVector();
-            double d0 = vec32.lengthVector() + 0.0D;
+            //double d3 = vec32.length();
+            double d0 = vec32.length() + 0.0D;
             vec32 = vec32.normalize();
             float f7 = (float)Math.acos(vec32.y);
             float f8 = (float)Math.atan2(vec32.z, vec32.x);

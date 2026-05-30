@@ -67,7 +67,7 @@ public class EntityAIBabyFollowParent<T extends Entity> extends EntityAIBase
 		while (iterator.hasNext())
 		{
 			EntityLiving entityliving1 = (EntityLiving)iterator.next();
-			double d1 = this.child.getDistanceSqToEntity(entityliving1);
+			double d1 = this.child.getDistanceSq(entityliving1);
 
 			if (d1 <= d0 && this.getParent(this.child) == entityliving1.getClass())
 			{
@@ -167,7 +167,7 @@ public class EntityAIBabyFollowParent<T extends Entity> extends EntityAIBase
 		}
 		else
 		{
-			double d0 = this.child.getDistanceSqToEntity(this.parent);
+			double d0 = this.child.getDistanceSq(this.parent);
 			return d0 >= 9.0D && d0 <= 256.0D;
 		}
 	}

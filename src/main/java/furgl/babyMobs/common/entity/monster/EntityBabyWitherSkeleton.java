@@ -148,7 +148,7 @@ public class EntityBabyWitherSkeleton extends EntityWitherSkeleton
 				Vec3d vec3 = RandomPositionGenerator.findRandomTargetBlockAwayFrom(this, 16, 7, new Vec3d(player.posX, player.posY, player.posZ));
 				if (vec3 != null)
 				{
-					while (player.getDistanceSq(vec3.x, vec3.y, vec3.z) < player.getDistanceSqToEntity(this))
+					while (player.getDistanceSq(vec3.x, vec3.y, vec3.z) < player.getDistanceSq(this))
 					{
 						vec3 = RandomPositionGenerator.findRandomTargetBlockAwayFrom(this, 16, 7, new Vec3d(player.posX, player.posY, player.posZ));
 					}
